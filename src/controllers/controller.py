@@ -9,7 +9,6 @@ class IndexController(MethodView):
         with mysql.cursor() as cur:
             cur.execute("SELECT * FROM produtos")
             data = cur.fetchall()
-
             cur.execute("SELECT * FROM categories")
             categories = cur.fetchall()
 
@@ -29,7 +28,7 @@ class IndexController(MethodView):
                 cur.connection.commit()
                 flash('PRODUTO CADASTRADO COM SECESSO', 'success')
             except ValueError:
-                flash('ESTE PRODUTO NAO FOI EDITADO', "error")
+                flash('ESTE PRODUTO NAO FOI EDITADO', 'error')
 
                 flash('ESTE PRODUTO NAO FOI CADASTRADO', 'error')
 
@@ -44,7 +43,7 @@ class DeleteProdutoController(MethodView):
                 cur.connection.commit()
                 flash('PRODUTO DELETADO COM SUCESSO', 'success')
             except ValueError:
-                flash('ESTE PRODUTO NAO FOI EDITADO', "error")
+                flash('ESTE PRODUTO NAO FOI EDITADO', 'error')
                 flash('ESTE PRODUTO NAO FOI CADASTRADO', 'error')
 
             return redirect('/')
@@ -58,7 +57,7 @@ class UpdateProdutoController(MethodView):
             return render_template('public/update.html', product=product)
 
     def post(self, code):
-        productCode = request.form['code']
+        code = request.form['code']
         old_code = request.form['code']
         name = request.form['name']
         stock = request.form['stock']
