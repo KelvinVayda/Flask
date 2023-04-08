@@ -10,7 +10,7 @@ app.config.from_mapping(
 
 app.add_url_rule(routes["index_route"], view_func=routes["indexcontroller"])
 
-app.add_url_rule(routes["delete_route"], view_func=routes["delete_controller"])
+app.add_url_rule(routes["index_route"],view_func=routes["indexcontroller"])
 
 app.add_url_rule(routes["update_route"], view_func=routes["update_controller"])
 
