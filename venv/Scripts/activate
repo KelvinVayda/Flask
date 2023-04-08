@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Flask2023\venv"
+VIRTUAL_ENV="C:\Users\kelvi\OneDrive\Documentos\flask\hello_world\Flask\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
